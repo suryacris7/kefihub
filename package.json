@@ -1,0 +1,22 @@
+{
+  "name": "kefihub_technologies",
+  "version": "1.0.0",
+  "private": true,
+  "description": "kefihub_Technologies",
+  "author": "Surya Kumar Mahesh",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
