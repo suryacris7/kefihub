@@ -5,11 +5,10 @@ import services from "../constants/services";
 export default class Services extends Component {
   render() {
     return (
-      <div id="service" className="bg-grey">
-        <section className="section bg-grey"></section>
-        <Title title={"What we do ?"} />
+      <section id="services" className="section bg-grey">
+        <Title title={"What we do?"} />
         <div className="section-center services-center">{services}</div>
-      </div>
+      </section>
     );
   }
 }

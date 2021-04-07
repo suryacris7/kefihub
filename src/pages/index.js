@@ -1,12 +1,12 @@
 import * as React from "react";
-import Example from "../components/example";
-import Header from "../components/Header/Header";
-import Explore from "../components/Explore";
 import Services from "../components/Services";
 import Contact from "../components/Contact";
 import About from "../components/About";
+import Projects from "../components/Projects";
 import Layout from "../components/Layout";
+import Home from "../components/Home";
 import { StaticQuery, graphql } from "gatsby";
+import Image from "../images/banner-bg.png";
 export default ({ data }) => {
   const {
     site: {
@@ -15,13 +15,17 @@ export default ({ data }) => {
   } = data;
   console.log("props : ", data);
   return (
-    <div id="home">
-      <Layout />
-      <Explore />
+    <>
+      <div style={{ backgroundImage: `url(${Image})` }}>
+        <Layout />
+        <Home />
+        <Services />
+      </div>
+
       <About />
-      <Services />
+      <Projects />
       <Contact />
-    </div>
+    </>
   );
 };
 

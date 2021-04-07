@@ -10,44 +10,55 @@ const data = [
   },
   {
     id: 2,
+    text: "services",
+    url: "/services/",
+  },
+  {
+    id: 3,
     text: "about",
     url: "/about/",
   },
   {
-    id: 3,
-    text: "service",
+    id: 4,
+    text: "projects",
     url: "/projects/",
   },
   {
-    id: 4,
+    id: 5,
     text: "contact",
     url: "/contact/",
   },
 ];
 
-const tempLinks = data.map((link) => {
-  let page = link.text;
+const tempLinks = (removeDrawer) => {
+  var links = data.map((link) => {
+    let page = link.text;
 
-  return (
-    <li key={link.id}>
-      <div
-        onClick={() => {
-          console.log("Page : ", page);
-          return scrollTo(`#${page}`);
-        }}
-        to={link.url}
-      >
-        {link.text}
-      </div>
-    </li>
-  );
-});
+    return (
+      <li key={link.id}>
+        <div
+          onClick={() => {
+            removeDrawer(false);
+            console.log("Page : ", page);
+            return scrollTo(`#${page}`);
+          }}
+          to={link.url}
+        >
+          {link.text}
+        </div>
+      </li>
+    );
+  });
+
+  return links;
+};
 // I KNOW WE CAN COMBINE IT !!!!!
 
-export default ({ styleClass }) => {
+export default ({ styleClass, removeDrawer }) => {
+  console.log("Rem : ", styleClass, "--", removeDrawer);
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-      {tempLinks}
+      {tempLinks(removeDrawer)}
     </ul>
   );
 };

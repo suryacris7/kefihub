@@ -4,7 +4,7 @@ import scrollTo from "gatsby-plugin-smoothscroll";
 export default class Explore extends Component {
   render() {
     return (
-      <div id="explore" style={{ height: "500px" }} className="explore">
+      <section className="section explore" id="home">
         <h2>{"THE BEST WAY TO PREDICT"}</h2>
         <br />
         <h2>{"THE FUTURE IS TO"}</h2>
@@ -15,7 +15,7 @@ export default class Explore extends Component {
         <div className="social-link-div">
           <SocialLink className="social-links" />
         </div>
-      </div>
+      </section>
     );
   }
 }

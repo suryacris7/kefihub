@@ -1,22 +1,29 @@
 import React, { Component } from "react";
-import PageLinks from "../constants/links";
-import kefilogo from "../images/kefi_logo.png";
-import { FaAlignRight } from "react-icons/fa";
-export default class layout extends Component {
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+export default class Layout extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  toggleSidebar = () => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  };
   render() {
     return (
-      <nav className="navbar">
-        <div className="nav-center">
-          <div className="nav-header">
-            <img src={kefilogo} alt="kefihub" className="kefihub_logo" />
-            <button type="button" className="toggle-btn">
-              <FaAlignRight />
-            </button>
-          </div>
-
-          <PageLinks styleClass="nav-links" />
-        </div>
-      </nav>
+      <>
+        <Navbar toggleSidebar={this.toggleSidebar} />
+        <Sidebar
+          toggleSidebar={this.toggleSidebar}
+          isOpen={this.state.isOpen}
+        />
+      </>
     );
   }
 }
