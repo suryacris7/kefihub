@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-/* @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap"); */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
 /*
 =============== 
@@ -141,24 +141,24 @@ p {
 /*  global classes */
 
 .btn {
-  text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-primary-9);
+  text-transform: uppercase !important;
+  background: var(--clr-primary-5) !important;
+  color: var(--clr-primary-9) !important;
   padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  font-weight: 700;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
+  letter-spacing: var(--spacing) !important;
+  display: inline-block !important;
+  font-weight: 700 !important;
+  -webkit-transition: var(--transition) !important;
+  transition: var(--transition) !important;
+  font-size: 0.875rem !important;
+  border: 2px solid transparent !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+  border-radius: var(--radius) !important;
 }
 .btn:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
+  color: var(--clr-primary-1) !important;
+  background: var(--clr-primary-9) !important;
 }
 .center-btn {
   display: block;
@@ -238,6 +238,7 @@ Navbar
   width: 90vw;
   max-width: 1170px;
   margin: 0 auto;
+  padding-top: 20px;
 }
 .nav-header {
   display: flex;
@@ -272,15 +273,18 @@ Navbar
     justify-content: flex-end;
   }
   .nav-links li {
-    margin-right: 2rem;
+    margin-right: 0rem;
   }
   .nav-links div {
     text-transform: capitalize;
+    margin-right: 2rem;
     color: var(--clr-grey-1);
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: var(--spacing);
     transition: var(--transition);
     padding: 0.5rem 0;
+    font-family: var(--ff-secondary);
+    font-size: 1rem;
   }
   .nav-links div:hover {
     color: var(--clr-primary-5);
@@ -429,6 +433,7 @@ About Page
   margin-bottom: 2rem;
   height: 25rem;
 }
+
 .about-text .section-title {
   margin-bottom: 2rem;
   text-align: left;
@@ -439,6 +444,8 @@ About Page
 }
 .about-text p {
   line-height: 2;
+  font-size: 16px;
+  font-family: var(--ff-secondary);
 }
 
 .about-stack span {
@@ -456,6 +463,11 @@ About Page
   margin-top: 0.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .about-text p {
+    font-size: 14px;
+  }
+}
 @media screen and (min-width: 992px) {
   .about-center {
     display: grid;
@@ -520,10 +532,12 @@ Projects
   font-weight: 500;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  text-transform: capitalize;
 }
 .project-desc {
   word-spacing: 15px;
   color: var(--clr-grey-3);
+  font-family: var(--ff-secondary);
 }
 .project-stack {
   margin-bottom: 1rem;
@@ -739,6 +753,12 @@ body {
   margin-top: 0px !important;
 }
 
+/*
+=================
+ Contact
+===================
+*/
+
 .contact-section {
   display: flex;
   width: 100%;
@@ -751,16 +771,61 @@ body {
 }
 
 .contact-text {
-  width: 100%;
   margin-right: 30px;
   margin-left: 15px;
 }
 
+.contact-text p {
+  line-height: 2;
+  font-size: 16px;
+  font-family: var(--ff-secondary);
+}
+
 @media screen and (max-width: 768px) {
   .contact-form {
-    width: 80%;
+    width: 92%;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .contact-section {
     display: block;
   }
+  .contact-text {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .contact-text p {
+    font-size: 14px;
+  }
+}
+
+/*
+===============
+Footer
+===============
+*/
+.footer {
+  height: 7rem;
+  background: #222;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+.footer h4 {
+  margin-top: 0.5rem;
+  color: var(--clr-white);
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.footer h4 span {
+  color: var(--clr-primary-5);
+}
+.footer-links {
+  margin: 0 auto 1rem auto;
+}
+.footer .social-link {
+  color: var(--clr-white);
+}
+.footer .social-link:hover {
+  color: var(--clr-primary-5);
 }

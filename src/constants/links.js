@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import scrollTo from "gatsby-plugin-smoothscroll";
 
 const data = [
@@ -37,12 +36,10 @@ const tempLinks = (removeDrawer) => {
     return (
       <li key={link.id}>
         <div
-          onClick={() => {
+          onClick={(event) => {
             removeDrawer(false);
-            console.log("Page : ", page);
             return scrollTo(`#${page}`);
           }}
-          to={link.url}
         >
           {link.text}
         </div>
@@ -54,11 +51,8 @@ const tempLinks = (removeDrawer) => {
 };
 // I KNOW WE CAN COMBINE IT !!!!!
 
-export default ({ styleClass, removeDrawer }) => {
-  console.log("Rem : ", styleClass, "--", removeDrawer);
-  return (
-    <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-      {tempLinks(removeDrawer)}
-    </ul>
-  );
-};
+export default ({ styleClass, removeDrawer }) => (
+  <ul className={`page-links ${styleClass ? styleClass : ""}`}>
+    {tempLinks(removeDrawer)}
+  </ul>
+);

@@ -4,40 +4,27 @@ import Contact from "../components/Contact";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 import Home from "../components/Home";
-import { StaticQuery, graphql } from "gatsby";
 import Image from "../images/banner-bg.png";
-export default ({ data }) => {
-  const {
-    site: {
-      info: { title, author },
-    },
-  } = data;
-  console.log("props : ", data);
+const Index = () => {
+  const mystyle = {
+    backgroundImage: `url(${Image})`,
+  };
+
   return (
     <>
-      <div style={{ backgroundImage: `url(${Image})` }}>
+      <div style={mystyle}>
         <Layout />
         <Home />
-        <Services />
       </div>
-
+      <Services />
       <About />
       <Projects />
       <Contact />
+      <Footer />
     </>
   );
 };
 
-export const data = graphql`
-  query First {
-    site {
-      info: siteMetadata {
-        title
-        author
-        description
-        members
-      }
-    }
-  }
-`;
+export default Index;

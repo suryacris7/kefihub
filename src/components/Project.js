@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "gatsby-image";
-const Project = ({ id, name, desc, image, stack }) => {
+
+const Project = ({ id, name, desc, image }) => {
   return (
     <article key={id} className="project">
       {image}
